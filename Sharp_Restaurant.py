@@ -609,7 +609,18 @@ class MainWindow(QMainWindow):
         cursor.execute(sql_select_Query)
         self.Waiter_Order_Page_records = cursor.fetchall()
         self.Waiter_Order_Page_ordered_food_array = []
-        self.Waiter_Order_Page_ordered_food_widget_array = []
+        text = "Food Ordered          $" + str(self.total)
+        self.ui.Waiter_Order_Page_btn_food_ordered.setText(str(text))
+        self.ui.Waiter_Food_Ordered_Widget.lower()
+        try:
+            for row in self.Waiter_Order_Page_ordered_food_widget_array:
+                row[0].deleteLater()
+                row[1].deleteLater()
+                row[2].deleteLater()
+                row[3].deleteLater()
+            self.Waiter_Order_Page_ordered_food_widget_array = []
+        except:
+            self.Waiter_Order_Page_ordered_food_widget_array = []
         self.Waiter_Order_Page_tab_btn_array = [self.ui.Waiter_Order_Page_btn_tab_1,
                                                 self.ui.Waiter_Order_Page_btn_tab_2,
                                                 self.ui.Waiter_Order_Page_btn_tab_3,
@@ -656,16 +667,23 @@ class MainWindow(QMainWindow):
         self.updatedish_Waiter()
         for i in range(len(self.Waiter_Order_Page_records)):
             self.Waiter_Order_Page_tab_btn_array[i].setText(self.Waiter_Order_Page_records[i][0])
-            self.Waiter_Order_Page_tab_btn_array[i].clicked.connect(self.TabOnClick_Waiter)
+            self.Waiter_Order_Page_tab_btn_array[i].setStyleSheet("")
 
+        self.Waiter_Order_Page_tab_btn_array[0].setStyleSheet("background-color: rgb(249, 234, 154);")
         if (len(self.Waiter_Order_Page_records) < 13):
             for i in range(len(self.Waiter_Order_Page_records), 13):
                 self.Waiter_Order_Page_tab_btn_array[i].deleteLater()
-        for i in range(3):
-            self.Waiter_Order_Page_food_quantity_array[i][1].clicked.connect(self.Waiter_Order_Page_add_q)
-            self.Waiter_Order_Page_food_quantity_array[i][2].clicked.connect(self.Waiter_Order_Page_de_q)
-        self.ui.Waiter_Order_Page_btn_chi.clicked.connect(self.Waiter_ChangeToChi)
-        self.ui.Waiter_Order_Page_btn_eng.clicked.connect(self.Waiter_ChangeToEng)
+
+        if self.setup == True:
+            self.setup = False
+            for i in range(3):
+                self.Waiter_Order_Page_food_quantity_array[i][1].clicked.connect(self.Waiter_Order_Page_add_q)
+                self.Waiter_Order_Page_food_quantity_array[i][2].clicked.connect(self.Waiter_Order_Page_de_q)
+            for i in range(len(self.Table_Order_Page_records)):
+                self.Waiter_Order_Page_tab_btn_array[i].clicked.connect(self.TabOnClick_Waiter)
+            self.ui.Waiter_Order_Page_btn_chi.clicked.connect(self.Waiter_ChangeToChi)
+            self.ui.Waiter_Order_Page_btn_eng.clicked.connect(self.Waiter_ChangeToEng)
+
 
     def TabOnClick_Waiter(self):
         Waiter_Order_Page_selected_stylesheet = """background-color: rgb(249, 234, 154);"""
@@ -1063,7 +1081,19 @@ class MainWindow(QMainWindow):
         cursor.execute(sql_select_Query)
         self.Table_Order_Page_records = cursor.fetchall()
         self.Table_Order_Page_ordered_food_array = []
-        self.Table_Order_Page_ordered_food_widget_array = []
+        text = "Food Ordered          $" + str(self.total)
+        self.ui.Table_Order_Page_btn_food_ordered.setText(str(text))
+        self.ui.Food_Ordered_Widget.lower()
+        try:
+            for row in self.Table_Order_Page_ordered_food_widget_array:
+                row[0].deleteLater()
+                row[1].deleteLater()
+                row[2].deleteLater()
+                row[3].deleteLater()
+            self.Table_Order_Page_ordered_food_widget_array = []
+        except:
+            self.Table_Order_Page_ordered_food_widget_array = []
+
         self.Table_Order_Page_tab_btn_array = [self.ui.Table_Order_Page_btn_tab_1, self.ui.Table_Order_Page_btn_tab_2,
                                                self.ui.Table_Order_Page_btn_tab_3, self.ui.Table_Order_Page_btn_tab_4,
                                                self.ui.Table_Order_Page_btn_tab_5, self.ui.Table_Order_Page_btn_tab_6,
@@ -1105,17 +1135,25 @@ class MainWindow(QMainWindow):
         self.Table_Order_Page_selected_cat = self.Table_Order_Page_records[0][1]
         self.updatedish()
         for i in range(len(self.Table_Order_Page_records)):
+            self.Table_Order_Page_tab_btn_array[i].setStyleSheet("")
             self.Table_Order_Page_tab_btn_array[i].setText(self.Table_Order_Page_records[i][0])
-            self.Table_Order_Page_tab_btn_array[i].clicked.connect(self.TabOnClick)
+
+        self.Table_Order_Page_tab_btn_array[0].setStyleSheet("background-color: rgb(249, 234, 154);")
 
         if (len(self.Table_Order_Page_records) < 13):
             for i in range(len(self.Table_Order_Page_records), 13):
                 self.Table_Order_Page_tab_btn_array[i].deleteLater()
-        for i in range(3):
-            self.Table_Order_Page_food_quantity_array[i][1].clicked.connect(self.Table_Order_Page_add_q)
-            self.Table_Order_Page_food_quantity_array[i][2].clicked.connect(self.Table_Order_Page_de_q)
-        self.ui.Table_Order_Page_btn_chi.clicked.connect(self.Table_ChangeToChi)
-        self.ui.Table_Order_Page_btn_eng.clicked.connect(self.Table_ChangeToEng)
+        if self.setup == True:
+            self.setup = False
+            for i in range(3):
+                self.Table_Order_Page_food_quantity_array[i][1].clicked.connect(self.Table_Order_Page_add_q)
+                self.Table_Order_Page_food_quantity_array[i][2].clicked.connect(self.Table_Order_Page_de_q)
+            for i in range(len(self.Table_Order_Page_records)):
+                self.Table_Order_Page_tab_btn_array[i].clicked.connect(self.TabOnClick)
+            self.ui.Table_Order_Page_btn_chi.clicked.connect(self.Table_ChangeToChi)
+            self.ui.Table_Order_Page_btn_eng.clicked.connect(self.Table_ChangeToEng)
+
+
 
     def TabOnClick(self):
 
@@ -1283,6 +1321,7 @@ class MainWindow(QMainWindow):
     def Login(self):
         global role, hackust_db
         rolearray = ["table", "kitchen", "bar", "staff", "admin"]
+        self.setup = True
         name = self.ui.Login_Page_text_username.text()
 
         password = self.ui.Login_Page_text_password.text()
