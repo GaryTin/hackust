@@ -70,7 +70,14 @@ class MainWindow(QMainWindow):
         self.ui.Statistics_Page_btn_7_days.clicked.connect(self.colorchange_7days)
         self.ui.Statistics_Page_btn_30_days.clicked.connect(self.colorchange_30days)
         self.ui.Statistics_Page_btn_365_days.clicked.connect(self.colorchange_365days)
+        self.ui.Cash_Payment_Page_input_paid.textChanged.connect(self.updataQ)
 
+    def updataQ(self):
+        try:
+            self.q = float(self.ui.Cash_Payment_Page_input_paid.text())
+            self.ui.Cash_Payment_Page_label_change_price.setText("$" + str(round(float(self.q) - float(self.z),2)))
+        except:
+            pass
 
     def SetUpKitchen_Bar(self):
         self.Bar_or_Kitchen=""
@@ -315,6 +322,8 @@ class MainWindow(QMainWindow):
     def back_to_waiter_page(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Page)
     def Waiter_Order_Page_order_cash(self):
+        self.ui.Cashier_Page_label_title.setText("Takeaway")
+        self.waiter_payment = True
         for i in range(self.Waiter_Order_Page_Number_submited_food_ordered,
                        len(self.Waiter_Order_Page_ordered_food_array)):
             rec_id = self.receipt_id
@@ -331,12 +340,19 @@ class MainWindow(QMainWindow):
                 qu) + """ WHERE (menu_id = '""" + str(item_id) + """');"""
             cursor = hackust_db.cursor()
             cursor.execute(sql_select_Query)
+            cursor.execute(sql_select_Query)
+            sql_select_Query = """UPDATE receipt SET checking_time = CURRENT_TIME, checking_status = '1' WHERE (receipt_id = '""" + str(
+                self.receipt_id) + """');"""
+            cursor = hackust_db.cursor()
             hackust_db.commit()
         self.Waiter_Order_Page_Number_submited_food_ordered = len(self.Waiter_Order_Page_ordered_food_array)
         self.updatedish_Waiter()
         self.ui.stackedWidget.setCurrentWidget(self.ui.Cash_Payment_Page)
+        self.Cash()
 
     def Waiter_Order_Page_order_credit_card(self):
+        self.ui.Cashier_Page_label_title.setText("Takeaway")
+        self.waiter_payment = True
         for i in range(self.Waiter_Order_Page_Number_submited_food_ordered,
                        len(self.Waiter_Order_Page_ordered_food_array)):
             rec_id = self.receipt_id
@@ -353,10 +369,16 @@ class MainWindow(QMainWindow):
                 qu) + """ WHERE (menu_id = '""" + str(item_id) + """');"""
             cursor = hackust_db.cursor()
             cursor.execute(sql_select_Query)
+            sql_select_Query = """UPDATE receipt SET checking_time = CURRENT_TIME, checking_status = '1' WHERE (receipt_id = '"""+str(self.receipt_id)+"""');"""
+            cursor = hackust_db.cursor()
+            cursor.execute(sql_select_Query)
+
             hackust_db.commit()
+
         self.Waiter_Order_Page_Number_submited_food_ordered = len(self.Waiter_Order_Page_ordered_food_array)
         self.updatedish_Waiter()
         self.ui.stackedWidget.setCurrentWidget(self.ui.Credit_Card_Payment_Page)
+        self.CreditCard()
 
     def Waiter_Order_Page_de_q(self):
         for i in range(3):
@@ -679,7 +701,7 @@ class MainWindow(QMainWindow):
             for i in range(3):
                 self.Waiter_Order_Page_food_quantity_array[i][1].clicked.connect(self.Waiter_Order_Page_add_q)
                 self.Waiter_Order_Page_food_quantity_array[i][2].clicked.connect(self.Waiter_Order_Page_de_q)
-            for i in range(len(self.Table_Order_Page_records)):
+            for i in range(len(self.Waiter_Order_Page_records)):
                 self.Waiter_Order_Page_tab_btn_array[i].clicked.connect(self.TabOnClick_Waiter)
             self.ui.Waiter_Order_Page_btn_chi.clicked.connect(self.Waiter_ChangeToChi)
             self.ui.Waiter_Order_Page_btn_eng.clicked.connect(self.Waiter_ChangeToEng)
@@ -1513,7 +1535,10 @@ class MainWindow(QMainWindow):
 
     def Waiter(self):
         if (self.ui.stackedWidget.currentWidget() == self.ui.Waiter_Page):
-            threading.Timer(10.0, self.Waiter).start()
+            timer = QTimer()
+            timer.timeout.connect(self.Waiter)
+            timer.start(10000)
+
 
         sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 ORDER BY checking_time;
 
@@ -1624,15 +1649,18 @@ class MainWindow(QMainWindow):
 
     def CashConfirm(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Page)
+
         sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 ORDER BY checking_time;
                                """
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
         tablecashier = cursor.fetchall()
+
         x = 0
         name = self.ui.Cashier_Page_label_title.text()
+
         if(self.waiter_payment==True):
-            self.waiter_payment==False
+            self.waiter_payment=False
             c= self.receipt_id
         else:
             for row in tablecashier:
@@ -1641,18 +1669,22 @@ class MainWindow(QMainWindow):
                     c = tablecashier[x][1]
                     break
                 x = x + 1
-        sql_select_Query = """UPDATE customer_order SET order_status = '4' WHERE (order_id = """ + str(c) + """); """
-        cursor = hackust_db.cursor()
-        cursor.execute(sql_select_Query)
+
+            sql_select_Query = """UPDATE customer_order SET order_status = '4' WHERE (order_id = """ + str(c) + """); """
+            cursor = hackust_db.cursor()
+            cursor.execute(sql_select_Query)
+
         hackust_db.commit()
         self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Page)
+        Current_time = datetime.datetime.now().strftime("%H:%M:%S")
         sql_select_Query = """UPDATE
                receipt
                SET
-               out_time = CURRENT_TIME, checking_status = '0'
-               WHERE(receipt_id='""" + str(c) + """"; """
+               out_time = '"""+str(Current_time)+"""', checking_status = '0'
+               WHERE receipt_id='""" + str(c) + """'; """
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
+
         hackust_db.commit()
 
     def colorchange_7days(self):
@@ -1868,7 +1900,7 @@ font-weight:500;
         x = 0
         name = self.ui.Cashier_Page_label_title.text()
         if (self.waiter_payment == True):
-            self.waiter_payment == False
+            self.waiter_payment = False
             c = self.receipt_id
         else:
             for row in tablecashier:
@@ -1883,11 +1915,12 @@ font-weight:500;
         hackust_db.commit()
         creditconfirms = cursor.fetchall()
         self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Page)
+        Current_time = datetime.datetime.now().strftime("%H:%M:%S")
         sql_select_Query = """UPDATE
         receipt
         SET
-        out_time = CURRENT_TIME, checking_status = '0'
-        WHERE(receipt_id='""" + str(c) + """"; """
+        out_time = '"""+str(Current_time)+"""', checking_status = '0'
+        WHERE receipt_id='""" + str(c) + """'; """
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
         hackust_db.commit()
@@ -1895,6 +1928,8 @@ font-weight:500;
 
     def TakeAway(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Order_Page)
+        self.SetUpWaiterOrderPage()
+
 
     def Chart(self):
         sql_select_Query = """
@@ -1961,16 +1996,13 @@ font-weight:500;
         tablecashier = cursor.fetchall()
         x = 0
         name = self.ui.Cashier_Page_label_title.text()
-        if (self.waiter_payment == True):
-            self.waiter_payment == False
-            c = self.receipt_id
-        else:
-            for row in tablecashier:
-                temp = str(tablecashier[x][0]) + " (" + str(tablecashier[x][2]) + " People)"
-                if (temp == name):
-                    c = tablecashier[x][1]
-                    break
-                x = x + 1
+
+        for row in tablecashier:
+            temp = str(tablecashier[x][0]) + " (" + str(tablecashier[x][2]) + " People)"
+            if (temp == name):
+                c = tablecashier[x][1]
+                break
+            x = x + 1
         sql_select_Query = """SELECT a.item_ename, b.order_qty, c.menu_price, b.order_status
                      FROM item_name AS a 
                      INNER JOIN customer_order AS b ON a.item_id = b.item_id
@@ -2028,6 +2060,7 @@ font-weight:500;
 
     def Cash(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Cash_Payment_Page)
+        self.q = 100
 
         self.ui.stackedWidget.setCurrentWidget(self.ui.Cash_Payment_Page)
         sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 ORDER BY checking_time;
@@ -2038,7 +2071,6 @@ font-weight:500;
         x = 0
         name = self.ui.Cashier_Page_label_title.text()
         if (self.waiter_payment == True):
-            self.waiter_payment == False
             c = self.receipt_id
         else:
             for row in tablecashier:
@@ -2059,7 +2091,7 @@ font-weight:500;
         cashrecipit = cursor.fetchall()
         x = 1
         y = 0
-        z = 0
+        self.z = float(0)
         for row in cashrecipit:
             self.Cash_Payment_Page_food_item = QHBoxLayout()
             self.Cash_Payment_Page_food_item.setSizeConstraint(QLayout.SetMinimumSize)
@@ -2093,14 +2125,13 @@ font-weight:500;
             self.Cash_Payment_Page_food_price.setText("$" + str(cashrecipit[y][2] * cashrecipit[y][1]))
             self.Cash_Payment_Page_food_item.addWidget(self.Cash_Payment_Page_food_price)
             cash.append(self.Cash_Payment_Page_food_price)
-            z = z + cashrecipit[y][1] * cashrecipit[y][2]
+            self.z = self.z + float(cashrecipit[y][1]) * float(cashrecipit[y][2])
             x = x + 1
             y = y + 1
             self.ui.Cash_Payment_Page_verticalLayout.addLayout(self.Cash_Payment_Page_food_item)
-        self.ui.Cash_Payment_Page_label_total_price.setText("$" + str(z))
-        q = 100
-        self.ui.Cash_Payment_Page_input_paid.setText("$" + str(q))
-        self.ui.Cash_Payment_Page_label_change_price.setText("$" + str(q - z))
+        self.ui.Cash_Payment_Page_label_total_price.setText("$" + str(self.z))
+        self.ui.Cash_Payment_Page_input_paid.setText(str(self.q))
+        self.ui.Cash_Payment_Page_label_change_price.setText("$" + str(self.q - self.z))
 
     def CreditCard(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Credit_Card_Payment_Page)
@@ -2115,7 +2146,6 @@ font-weight:500;
         x = 0
         name = self.ui.Cashier_Page_label_title.text()
         if (self.waiter_payment == True):
-            self.waiter_payment == False
             c = self.receipt_id
         else:
             for row in tablecashier:
