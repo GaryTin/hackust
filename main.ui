@@ -1,0 +1,6838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>675</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>675</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>675</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Sharp Restaurant</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="image.qrc">
+    <normaloff>:/image/icon_2.png</normaloff>:/image/icon_2.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1200</width>
+      <height>675</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+	font: 24pt &quot;Segoe UI&quot;;
+
+}
+
+#stacked_Widget
+{
+	
+	
+	background-color: rgb(255, 255, 255);
+}
+
+QFrame
+{
+
+	border-radius:45px;
+	background-color: rgb(255, 255, 255);
+
+}
+
+QLineEdit
+{
+	color: rgb(112, 112, 112);
+	border:none;
+	border-bottom:1px solid  rgb(112, 112, 112);
+	background:transparent;
+
+}
+
+
+
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 20px;
+border:none;
+font:25px;
+}
+
+
+
+QLabel
+{
+border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(41, 14, 4);
+}
+
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>8</number>
+    </property>
+    <widget class="QWidget" name="Login_Page">
+     <property name="styleSheet">
+      <string notr="true">*{
+	font: 24pt &quot;Segoe UI&quot;;
+
+}
+
+#Login_Page
+{
+	
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+
+}
+
+QFrame
+{
+
+	border-radius:45px;
+	background-color: rgb(255, 255, 255);
+
+}
+
+QLineEdit
+{
+	color: rgb(112, 112, 112);
+	border:none;
+	border-bottom:1px solid  rgb(112, 112, 112);
+	background:transparent;
+
+}
+
+
+QPushButton
+{
+	border-radius:35px;
+	background-color: rgb(104, 78, 50);
+	color: rgb(112, 112, 112); 
+	color:#ffffff; 
+	font: 18pt;
+	font-weight:500;
+}
+
+QPushButton:hover
+{
+	border-radius:35px;
+	background-color: rgb(234, 192, 144);
+	color: rgb(112, 112, 112); 
+	color:#ffffff; 
+}
+</string>
+     </property>
+     <widget class="QFrame" name="frame_login">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>62</y>
+        <width>400</width>
+        <height>535</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>611</width>
+        <height>571</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="Login_Page_text_username">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>214</y>
+         <width>300</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="text">
+        <string>Username</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Login_Page_text_password">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>324</y>
+         <width>300</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Password</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Login_Page_btn_login">
+       <property name="geometry">
+        <rect>
+         <x>144</x>
+         <y>418</y>
+         <width>113</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>-1</pointsize>
+         <weight>62</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 35px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 35px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/forward.png</normaloff>:/image/forward.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>36</width>
+         <height>36</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Login_Page_label_login_fail">
+       <property name="geometry">
+        <rect>
+         <x>78</x>
+         <y>196</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font:16px;
+color: rgb(255, 255,255,0);
+background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string>Incorrect username/password</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Login_Page_label_icon">
+       <property name="geometry">
+        <rect>
+         <x>64</x>
+         <y>-28</y>
+         <width>273</width>
+         <height>267</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/image/icon_1.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>Login_Page_label_icon</zorder>
+      <zorder>Login_Page_text_username</zorder>
+      <zorder>Login_Page_text_password</zorder>
+      <zorder>Login_Page_btn_login</zorder>
+      <zorder>Login_Page_label_login_fail</zorder>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Waiter_Page">
+     <property name="styleSheet">
+      <string notr="true">*{
+	font: 24pt &quot;Segoe UI&quot;;
+
+}
+
+#Waiter_Page
+{
+	
+
+	background-color: rgb(255, 255, 255);
+
+}
+
+QFrame
+{
+
+	border-radius:45px;
+	background-color: rgb(255, 255, 255);
+
+}
+
+QLineEdit
+{
+	color: rgb(112, 112, 112);
+	border:none;
+	border-bottom:1px solid  rgb(112, 112, 112);
+	background:transparent;
+
+}
+
+
+QPushButton
+{
+	border-radius:35px;
+	background-color: rgb(104, 78, 50);
+	color: rgb(112, 112, 112); 
+	color:#ffffff; 
+	font: 18pt;
+	font-weight:500;
+}
+
+QPushButton:hover
+{
+	border-radius:35px;
+	background-color: rgb(234, 192, 144);
+	color: rgb(112, 112, 112); 
+	color:#ffffff; 
+}
+</string>
+     </property>
+     <widget class="QFrame" name="frame_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>240</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(197, 197, 197, 255), stop:1 rgba(136, 136, 136, 255));
+
+	background-color: rgb(232, 151, 0);
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+border-radius:0px;
+}
+
+QPushButton
+{
+background-color: rgb(240, 186, 88,0);
+font-size: 20px;
+height: 73px;
+width: 1px;
+border: none;
+color: white; 
+	color: rgb(41, 14, 4);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <item>
+        <widget class="QLabel" name="Waiter_Page_label_name">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);
+font-weight:500;</string>
+         </property>
+         <property name="text">
+          <string>Waiter</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>48</y>
+        <width>859</width>
+        <height>541</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="2">
+        <widget class="QPushButton" name="Waiter_Page_btn_check_table_6">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Table 1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="Waiter_Page_btn_check_table_1">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Table 1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="Waiter_Page_btn_check_table_5">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Table 1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="Waiter_Page_btn_check_table_2">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Table 2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="Waiter_Page_btn_check_table_4">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Table 1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="Waiter_Page_btn_check_table_3">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>190</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Table 1</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="Waiter_Page_btn_takeaway_order">
+      <property name="geometry">
+       <rect>
+        <x>534</x>
+        <y>570</y>
+        <width>391</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Takeaway Order</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Waiter_Page_label_check_the_bill">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>25</y>
+        <width>221</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Check the Bill:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Table_Order_Page">
+     <widget class="QFrame" name="frame_3">
+      <property name="geometry">
+       <rect>
+        <x>206</x>
+        <y>0</y>
+        <width>995</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+        <stylestrategy>PreferDefault</stylestrategy>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:0px;
+background-color: white;
+border-radius:0;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <widget class="QPushButton" name="Table_Order_Page_btn_previou_page">
+       <property name="geometry">
+        <rect>
+         <x>42</x>
+         <y>130</y>
+         <width>53</width>
+         <height>523</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/back.png</normaloff>:/image/back.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Table_Order_Page_label_table_num">
+       <property name="geometry">
+        <rect>
+         <x>108</x>
+         <y>8</y>
+         <width>243</width>
+         <height>47</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+       </property>
+       <property name="text">
+        <string>Table Number: X </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Table_Order_Page_btn_food_ordered">
+       <property name="geometry">
+        <rect>
+         <x>546</x>
+         <y>0</y>
+         <width>501</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(249, 234, 154, 255), stop:1 rgba(232, 151, 0, 255));
+	color: rgb(41, 14, 4);
+border-radius:50px;
+border:none;
+font:24px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(249, 234, 154);
+	color: rgb(41, 14, 4);
+border-radius: 50px;
+border:none;
+font:24px;
+font-weight:500;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>Food Ordered          $0.00</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Table_Order_Page_btn_chi">
+       <property name="geometry">
+        <rect>
+         <x>388</x>
+         <y>0</y>
+         <width>65</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(232, 151, 0);
+border:none; 
+font-size: 18px; 
+font-weight:500;
+color: rgb(41, 14, 4);
+</string>
+       </property>
+       <property name="text">
+        <string>中文</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Table_Order_Page_btn_next_page">
+       <property name="geometry">
+        <rect>
+         <x>930</x>
+         <y>130</y>
+         <width>51</width>
+         <height>523</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+background-color: rgb(255, 255, 255,0);
+color:rgb(240, 186, 88)</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/forward.png</normaloff>:/image/forward.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Table_Order_Page_label_people_num">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>46</y>
+         <width>289</width>
+         <height>47</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+       </property>
+       <property name="text">
+        <string>Number of People: X </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Table_Order_Page_btn_eng">
+       <property name="geometry">
+        <rect>
+         <x>388</x>
+         <y>48</y>
+         <width>65</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-bottom-right-radius: 19px;
+border-bottom-left-radius: 19px; 
+background-color: rgb(249, 234, 154);
+font-size: 18px;
+font-weight:500;
+color: rgb(41, 14, 4);
+</string>
+       </property>
+       <property name="text">
+        <string>ENG</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="Table_Order_Page_dish_1">
+       <property name="geometry">
+        <rect>
+         <x>112</x>
+         <y>126</y>
+         <width>250</width>
+         <height>530</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: white;
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="Table_Order_Page_btn_food_quantity_increase_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>460</y>
+          <width>50</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/increase.png</normaloff>:/image/increase.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Table_Order_Page_btn_food_quantity_decrease_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>48</x>
+          <y>460</y>
+          <width>50</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/decrease.png</normaloff>:/image/decrease.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_quantity_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>102</x>
+          <y>460</y>
+          <width>53</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_image_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>14</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>:/image/rice.jpg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_name_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>160</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>Rice </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_price_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>86</x>
+          <y>426</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>$99</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_3_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>386</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_1_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>322</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>USA</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>288</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Food Source:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_2_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>356</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="Table_Order_Page_dish_2">
+       <property name="geometry">
+        <rect>
+         <x>394</x>
+         <y>126</y>
+         <width>250</width>
+         <height>530</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: white;
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="Table_Order_Page_btn_food_quantity_increase_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>460</y>
+          <width>50</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/increase.png</normaloff>:/image/increase.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Table_Order_Page_btn_food_quantity_decrease_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>48</x>
+          <y>460</y>
+          <width>50</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/decrease.png</normaloff>:/image/decrease.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_quantity_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>102</x>
+          <y>460</y>
+          <width>53</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_image_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>14</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>:/image/rice.jpg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_name_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>160</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>Rice </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_price_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>86</x>
+          <y>426</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>$99</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_2_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>356</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>288</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Food Source:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_1_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>322</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Japan</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_3_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>386</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="Table_Order_Page_dish_3">
+       <property name="geometry">
+        <rect>
+         <x>674</x>
+         <y>126</y>
+         <width>250</width>
+         <height>530</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: white;
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="Table_Order_Page_btn_food_quantity_increase_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>460</y>
+          <width>50</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/increase.png</normaloff>:/image/increase.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Table_Order_Page_btn_food_quantity_decrease_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>48</x>
+          <y>460</y>
+          <width>50</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/decrease.png</normaloff>:/image/decrease.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_quantity_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>102</x>
+          <y>460</y>
+          <width>53</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_image_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>14</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>:/image/rice.jpg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_name_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>160</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>Rice </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_price_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>86</x>
+          <y>426</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>$99</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_2_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>356</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>288</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Food Source:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_1_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>322</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Europe</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Table_Order_Page_label_food_source_3_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>386</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Food_Ordered_Widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>748</x>
+        <y>-2</y>
+        <width>503</width>
+        <height>677</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#Food_Ordered_Widget{	background-color: rgb(249, 234, 154);
+	color: rgb(41, 14, 4);
+border-radius:60px;}
+QLabel
+{
+background-color: rgb(255, 255, 255,0);
+color: rgb(41, 14, 4);
+font:24px;
+}
+</string>
+      </property>
+      <widget class="QLabel" name="Food_Ordered_Widget_label_food_order">
+       <property name="geometry">
+        <rect>
+         <x>102</x>
+         <y>21</y>
+         <width>169</width>
+         <height>63</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+font:24px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>Food Ordered</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Food_Ordered_Widget_label_total_price">
+       <property name="geometry">
+        <rect>
+         <x>323</x>
+         <y>21</y>
+         <width>101</width>
+         <height>63</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+font:24px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>$0.00</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Food_Ordered_Widget_btn_order_now">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>570</y>
+         <width>189</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>Order Now</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Food_Ordered_Widget_btn_check">
+       <property name="geometry">
+        <rect>
+         <x>252</x>
+         <y>568</y>
+         <width>189</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>Check</string>
+       </property>
+      </widget>
+      <widget class="QScrollArea" name="Food_Ordered_Widget_scroll_area">
+       <property name="geometry">
+        <rect>
+         <x>58</x>
+         <y>84</y>
+         <width>367</width>
+         <height>473</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="Food_Ordered_Widget_food_ordered_context">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>367</width>
+          <height>473</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QVBoxLayout" name="Food_Ordered_Widget_verticalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="sizeConstraint">
+            <enum>QLayout::SetMinimumSize</enum>
+           </property>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="Food_Ordered_Widget_btn_back">
+       <property name="geometry">
+        <rect>
+         <x>28</x>
+         <y>20</y>
+         <width>413</width>
+         <height>65</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>Food_Ordered_Widget_label_food_order</zorder>
+      <zorder>Food_Ordered_Widget_label_total_price</zorder>
+      <zorder>Food_Ordered_Widget_btn_order_now</zorder>
+      <zorder>Food_Ordered_Widget_btn_check</zorder>
+      <zorder>Food_Ordered_Widget_btn_back</zorder>
+      <zorder>Food_Ordered_Widget_scroll_area</zorder>
+     </widget>
+     <widget class="QFrame" name="Table_Order_Page_frame_tab">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>240</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(197, 197, 197, 255), stop:1 rgba(136, 136, 136, 255));
+
+	background-color: rgb(232, 151, 0);
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+border-radius:0px;
+}
+
+QPushButton
+{
+background-color: rgb(240, 186, 88,0);
+font-size: 20px;
+height: 73px;
+width: 1px;
+border: none;
+	color: rgb(41, 14, 4);
+
+font-weight:500;
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QScrollArea" name="scrollArea_2">
+       <property name="geometry">
+        <rect>
+         <x>2</x>
+         <y>1</y>
+         <width>263</width>
+         <height>673</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="Table_Order_Page_scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>246</width>
+          <height>1039</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_12">
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_1">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+background-color: rgb(249, 234, 154);</string>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_2">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_3">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_4">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_5">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_6">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_7">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_8">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_9">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_10">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_11">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_12">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Table_Order_Page_btn_tab_13">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <zorder>Food_Ordered_Widget</zorder>
+     <zorder>frame_3</zorder>
+     <zorder>Table_Order_Page_frame_tab</zorder>
+    </widget>
+    <widget class="QWidget" name="Waiter_Order_Page">
+     <widget class="QFrame" name="Waiter_Order_Page_frame_tab">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>240</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(197, 197, 197, 255), stop:1 rgba(136, 136, 136, 255));
+
+	background-color: rgb(232, 151, 0);
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+border-radius:0px;
+}
+
+QPushButton
+{
+background-color: rgb(240, 186, 88,0);
+font-size: 20px;
+height: 73px;
+width: 1px;
+border: none;
+	color: rgb(41, 14, 4);
+
+font-weight:500;
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="geometry">
+        <rect>
+         <x>2</x>
+         <y>1</y>
+         <width>263</width>
+         <height>673</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="Waiter_Order_Page_scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>246</width>
+          <height>1039</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_1">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(202, 37, 33);
+background-color: rgb(249, 234, 154);</string>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_2">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_3">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_4">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_5">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_6">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Recommendation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_7">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_8">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_9">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_10">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_11">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_12">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Waiter_Order_Page_btn_tab_13">
+           <property name="minimumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>222</width>
+             <height>73</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+        <zorder>Waiter_Order_Page_btn_tab_1</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_3</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_4</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_5</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_6</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_7</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_8</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_9</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_10</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_11</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_12</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_13</zorder>
+        <zorder>Waiter_Order_Page_btn_tab_2</zorder>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Waiter_Food_Ordered_Widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>748</x>
+        <y>-2</y>
+        <width>503</width>
+        <height>677</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#Waiter_Food_Ordered_Widget{	
+	background-color: rgb(249, 234, 154);
+color: rgb(41, 14, 4);
+border-radius:60px;}
+QLabel
+{
+background-color: rgb(255, 255, 255,0);
+color: rgb(41, 14, 4);
+font:24px;
+}
+</string>
+      </property>
+      <widget class="QLabel" name="Waiter_Food_Ordered_Widget_label_food_order">
+       <property name="geometry">
+        <rect>
+         <x>102</x>
+         <y>21</y>
+         <width>169</width>
+         <height>63</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+font:24px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>Food Ordered</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Waiter_Food_Ordered_Widget_label_total_price">
+       <property name="geometry">
+        <rect>
+         <x>323</x>
+         <y>21</y>
+         <width>101</width>
+         <height>63</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+font:24px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>$0.00</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Food_Ordered_Widget_btn_order_cash">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>570</y>
+         <width>189</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>Cash</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Food_Ordered_Widget_btn_order_credit_card">
+       <property name="geometry">
+        <rect>
+         <x>252</x>
+         <y>568</y>
+         <width>189</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>Credit Card</string>
+       </property>
+      </widget>
+      <widget class="QScrollArea" name="Waiter_Food_Ordered_Widget_scroll_area">
+       <property name="geometry">
+        <rect>
+         <x>58</x>
+         <y>84</y>
+         <width>361</width>
+         <height>469</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="Waiter_Food_Ordered_Widget_food_ordered_context">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>361</width>
+          <height>469</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QVBoxLayout" name="Waiter_Food_Ordered_Widget_verticalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="sizeConstraint">
+            <enum>QLayout::SetMinimumSize</enum>
+           </property>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Order_Page_btn_back">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>12</y>
+         <width>413</width>
+         <height>77</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Food_Ordered_Widget_btn_back">
+       <property name="geometry">
+        <rect>
+         <x>34</x>
+         <y>20</y>
+         <width>391</width>
+         <height>59</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_8">
+      <property name="geometry">
+       <rect>
+        <x>206</x>
+        <y>0</y>
+        <width>995</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+        <stylestrategy>PreferDefault</stylestrategy>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:0px;
+background-color: white;
+border-radius:0;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <widget class="QPushButton" name="Waiter_Order_Page_btn_previou_page">
+       <property name="geometry">
+        <rect>
+         <x>42</x>
+         <y>130</y>
+         <width>53</width>
+         <height>523</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/back.png</normaloff>:/image/back.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Order_Page_btn_food_ordered">
+       <property name="geometry">
+        <rect>
+         <x>546</x>
+         <y>0</y>
+         <width>501</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(249, 234, 154, 255), stop:1 rgba(232, 151, 0, 255));
+	color: rgb(41, 14, 4);
+border-radius:50px;
+border:none;
+font:24px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(249, 234, 154);
+	color: rgb(41, 14, 4);
+border-radius: 50px;
+border:none;
+font:24px;
+font-weight:500;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>Food Ordered          $0.00</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Order_Page_btn_chi">
+       <property name="geometry">
+        <rect>
+         <x>388</x>
+         <y>0</y>
+         <width>65</width>
+         <height>49</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(232, 151, 0);
+border:none; 
+font-size: 18px; 
+font-weight:500;
+color: rgb(41, 14, 4);
+</string>
+       </property>
+       <property name="text">
+        <string>中文</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Order_Page_btn_next_page">
+       <property name="geometry">
+        <rect>
+         <x>930</x>
+         <y>130</y>
+         <width>51</width>
+         <height>523</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+background-color: rgb(255, 255, 255,0);
+color:rgb(240, 186, 88)</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/forward.png</normaloff>:/image/forward.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Order_Page_btn_eng">
+       <property name="geometry">
+        <rect>
+         <x>388</x>
+         <y>48</y>
+         <width>65</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-bottom-right-radius: 19px;
+border-bottom-left-radius: 19px; 
+background-color: rgb(249, 234, 154);
+font-size: 18px;
+font-weight:500;
+color: rgb(41, 14, 4);
+</string>
+       </property>
+       <property name="text">
+        <string>ENG</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="Waiter_Order_Page_dish_1">
+       <property name="geometry">
+        <rect>
+         <x>112</x>
+         <y>126</y>
+         <width>250</width>
+         <height>530</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: white;
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="Waiter_Order_Page_btn_food_quantity_increase_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>460</y>
+          <width>50</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/increase.png</normaloff>:/image/increase.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Waiter_Order_Page_btn_food_quantity_decrease_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>48</x>
+          <y>460</y>
+          <width>50</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/decrease.png</normaloff>:/image/decrease.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_quantity_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>102</x>
+          <y>460</y>
+          <width>53</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_image_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>14</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>:/image/rice.jpg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_name_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>160</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>Rice</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_price_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>86</x>
+          <y>426</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>$99</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>288</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Food Source:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_2_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>356</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_3_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>386</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_1_dish_1">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>322</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>USA</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="Waiter_Order_Page_dish_2">
+       <property name="geometry">
+        <rect>
+         <x>394</x>
+         <y>126</y>
+         <width>250</width>
+         <height>530</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: white;
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="Waiter_Order_Page_btn_food_quantity_increase_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>460</y>
+          <width>50</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/increase.png</normaloff>:/image/increase.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Waiter_Order_Page_btn_food_quantity_decrease_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>48</x>
+          <y>460</y>
+          <width>50</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/decrease.png</normaloff>:/image/decrease.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_quantity_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>102</x>
+          <y>460</y>
+          <width>53</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_image_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>14</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>:/image/rice.jpg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_name_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>160</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>Rice </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_price_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>86</x>
+          <y>426</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>$99</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_3_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>386</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_1_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>322</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Japan</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>288</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Food Source:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_2_dish_2">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>356</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="Waiter_Order_Page_dish_3">
+       <property name="geometry">
+        <rect>
+         <x>674</x>
+         <y>126</y>
+         <width>250</width>
+         <height>530</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: white;
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="Waiter_Order_Page_btn_food_quantity_increase_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>460</y>
+          <width>50</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/increase.png</normaloff>:/image/increase.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Waiter_Order_Page_btn_food_quantity_decrease_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>48</x>
+          <y>460</y>
+          <width>50</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+
+	background-color: rgb(236, 164, 66);
+	background-color: rgb(97, 18, 14);
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 25px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="image.qrc">
+          <normaloff>:/image/decrease.png</normaloff>:/image/decrease.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_quantity_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>102</x>
+          <y>460</y>
+          <width>53</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_image_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>14</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>:/image/rice.jpg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_name_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>160</y>
+          <width>220</width>
+          <height>140</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>Rice </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_price_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>86</x>
+          <y>426</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+color: rgb(101, 116, 123);
+background-color: rgb(255, 255, 255,0);
+font:24px;
+color: rgb(97, 18, 14);
+font-weight:500;
+color: rgb(41, 14, 4);</string>
+        </property>
+        <property name="text">
+         <string>$99</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_3_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>386</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_1_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>322</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Europe</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>288</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string>Food Source:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Waiter_Order_Page_label_food_source_2_dish_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>356</y>
+          <width>220</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(232, 151, 0);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="Waiter_Order_Page_btn_back_2">
+       <property name="geometry">
+        <rect>
+         <x>68</x>
+         <y>-14</y>
+         <width>205</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 20px;
+border:none;
+font:25px;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/back.png</normaloff>:/image/back.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>42</width>
+         <height>150</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <zorder>Waiter_Food_Ordered_Widget</zorder>
+     <zorder>frame_8</zorder>
+     <zorder>Waiter_Order_Page_frame_tab</zorder>
+    </widget>
+    <widget class="QWidget" name="Kitchen_Bar_Page">
+     <property name="styleSheet">
+      <string notr="true">#Kitchen_Bar_Page
+{
+background-color: rgb(255, 255, 255);
+}
+</string>
+     </property>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>240</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(197, 197, 197, 255), stop:1 rgba(136, 136, 136, 255));
+
+	background-color: rgb(232, 151, 0);
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+border-radius:0px;
+}
+
+QPushButton
+{
+background-color: rgb(240, 186, 88,0);
+font-size: 20px;
+height: 73px;
+width: 1px;
+border: none;
+color: white; 
+	color: rgb(41, 14, 4);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="Kitchen_Bar_Page_label_name">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);
+font-weight:500;</string>
+         </property>
+         <property name="text">
+          <string>Kitchen</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>286</x>
+        <y>0</y>
+        <width>867</width>
+        <height>622</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetFixedSize</enum>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item row="1" column="0">
+        <widget class="QFrame" name="Kitchen_Bar_Page_dish_3">
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>400</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Kitchen_Bar_Page_food_name_dish_3">
+          <property name="geometry">
+           <rect>
+            <x>8</x>
+            <y>170</y>
+            <width>250</width>
+            <height>59</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:20px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>Rice</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_food_quantity_dish_3">
+          <property name="geometry">
+           <rect>
+            <x>207</x>
+            <y>162</y>
+            <width>217</width>
+            <height>59</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:42px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>x4</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_timer_dish_3">
+          <property name="geometry">
+           <rect>
+            <x>86</x>
+            <y>220</y>
+            <width>240</width>
+            <height>49</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:36px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>10 min 36 sec</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_image_dish_3">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>24</y>
+            <width>239</width>
+            <height>149</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/image/rice.jpg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Kitchen_Bar_Page_btn_dish_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>400</width>
+            <height>280</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>280</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: rgb(255, 255, 255,0);
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QFrame" name="Kitchen_Bar_Page_dish_1">
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>400</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Kitchen_Bar_Page_food_name_dish_1">
+          <property name="geometry">
+           <rect>
+            <x>8</x>
+            <y>170</y>
+            <width>250</width>
+            <height>59</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:20px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>Steamed Minced Pork w/ Preserved Vegetables</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_food_quantity_dish_1">
+          <property name="geometry">
+           <rect>
+            <x>207</x>
+            <y>162</y>
+            <width>217</width>
+            <height>59</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:42px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>x4</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_timer_dish_1">
+          <property name="geometry">
+           <rect>
+            <x>86</x>
+            <y>220</y>
+            <width>240</width>
+            <height>49</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:36px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>10 min 36 sec</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_image_dish_1">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>24</y>
+            <width>239</width>
+            <height>149</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/image/rice.jpg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Kitchen_Bar_Page_btn_dish_1">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>400</width>
+            <height>280</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>280</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: rgb(255, 255, 255,0);
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QFrame" name="Kitchen_Bar_Page_dish_2">
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>400</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Kitchen_Bar_Page_food_name_dish_2">
+          <property name="geometry">
+           <rect>
+            <x>8</x>
+            <y>170</y>
+            <width>250</width>
+            <height>59</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:20px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>Rice</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_food_quantity_dish_2">
+          <property name="geometry">
+           <rect>
+            <x>207</x>
+            <y>162</y>
+            <width>217</width>
+            <height>59</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:42px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>x4</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_timer_dish_2">
+          <property name="geometry">
+           <rect>
+            <x>76</x>
+            <y>220</y>
+            <width>240</width>
+            <height>49</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:36px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>10 min 36 sec</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_image_dish_2">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>24</y>
+            <width>239</width>
+            <height>149</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/image/rice.jpg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Kitchen_Bar_Page_btn_dish_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>400</width>
+            <height>280</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>280</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: rgb(255, 255, 255,0);
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QFrame" name="Kitchen_Bar_Page_dish_4">
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>400</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QLabel" name="Kitchen_Bar_Page_food_name_dish_4">
+          <property name="geometry">
+           <rect>
+            <x>8</x>
+            <y>170</y>
+            <width>250</width>
+            <height>59</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:20px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>Rice</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_food_quantity_dish_4">
+          <property name="geometry">
+           <rect>
+            <x>207</x>
+            <y>162</y>
+            <width>217</width>
+            <height>59</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:42px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>x4</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_timer_dish_4">
+          <property name="geometry">
+           <rect>
+            <x>86</x>
+            <y>220</y>
+            <width>240</width>
+            <height>49</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font:36px;
+font-weight:500;</string>
+          </property>
+          <property name="text">
+           <string>10 min 36 sec</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Kitchen_Bar_Page_image_dish_4">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>24</y>
+            <width>239</width>
+            <height>149</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>:/image/rice.jpg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Kitchen_Bar_Page_btn_dish_4">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>400</width>
+            <height>280</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>280</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: rgb(255, 255, 255,0);
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="Kitchen_Bar_Page_label_dish_left">
+      <property name="geometry">
+       <rect>
+        <x>474</x>
+        <y>618</y>
+        <width>489</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(249, 234, 154, 255), stop:1 rgba(232, 151, 0, 255));
+	color: rgb(41, 14, 4);
+border-radius:25px;
+</string>
+      </property>
+      <property name="text">
+       <string>18 Order Left</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Kitchen_Bar_Page_label_cover">
+      <property name="geometry">
+       <rect>
+        <x>474</x>
+        <y>630</y>
+        <width>489</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color:rgb(234, 163, 23);
+	color: rgb(41, 14, 4);
+border-radius:15px;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <zorder>Kitchen_Bar_Page_label_cover</zorder>
+     <zorder>frame_2</zorder>
+     <zorder>gridLayoutWidget</zorder>
+     <zorder>Kitchen_Bar_Page_label_dish_left</zorder>
+    </widget>
+    <widget class="QWidget" name="Cashier_Page">
+     <property name="styleSheet">
+      <string notr="true">*{
+	font: 24pt &quot;Segoe UI&quot;;
+
+}
+
+#Cashier_Page
+{
+	
+	
+	background-color: rgb(255, 255, 255);
+
+}
+
+QFrame
+{
+
+	border-radius:45px;
+	background-color: rgb(255, 255, 255);
+
+}
+
+QLineEdit
+{
+	color: rgb(112, 112, 112);
+	border:none;
+	border-bottom:1px solid  rgb(112, 112, 112);
+	background:transparent;
+
+}
+
+QLabel
+{border: none; 
+background-color: rgb(255, 255, 255,0);
+font:24px;
+font-weight:500;
+color: rgb(41, 14, 4);}
+
+QPushButton
+{
+	border-radius:35px;
+	background-color: rgb(104, 78, 50);
+	color: rgb(112, 112, 112); 
+	color:#ffffff; 
+	font: 18pt;
+	font-weight:500;
+}
+
+QPushButton:hover
+{
+	border-radius:35px;
+	background-color: rgb(234, 192, 144);
+	color: rgb(112, 112, 112); 
+	color:#ffffff; 
+}
+</string>
+     </property>
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>240</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(197, 197, 197, 255), stop:1 rgba(136, 136, 136, 255));
+
+	background-color: rgb(232, 151, 0);
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+border-radius:0px;
+}
+
+QPushButton
+{
+background-color: rgb(240, 186, 88,0);
+font-size: 20px;
+height: 73px;
+width: 1px;
+border: none;
+color: white; 
+	color: rgb(41, 14, 4);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="Cashier_Page_label_name">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="text">
+          <string>Cashier</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="Cashier_Page_btn_cash">
+      <property name="geometry">
+       <rect>
+        <x>362</x>
+        <y>570</y>
+        <width>210</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+font:25px;
+font-weight:500;
+
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+font:25px;
+font-weight:500;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Cash</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>42</width>
+        <height>150</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="Cashier_scroll_area_2">
+      <property name="geometry">
+       <rect>
+        <x>342</x>
+        <y>94</y>
+        <width>757</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="Cashier_food_ordered_content">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>757</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_13">
+        <item>
+         <layout class="QVBoxLayout" name="Cashier_Page_verticalLayout"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="Cashier_Page_label_total_price">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>484</y>
+        <width>175</width>
+        <height>67</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:36px;
+font-weight:500;</string>
+      </property>
+      <property name="text">
+       <string>$0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Cashier_Page_btn_back">
+      <property name="geometry">
+       <rect>
+        <x>264</x>
+        <y>-16</y>
+        <width>205</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 20px;
+border:none;
+font:25px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="image.qrc">
+        <normaloff>:/image/back.png</normaloff>:/image/back.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>42</width>
+        <height>150</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Cashier_Page_label_title">
+      <property name="geometry">
+       <rect>
+        <x>572</x>
+        <y>20</y>
+        <width>295</width>
+        <height>53</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Table 13 (3 People)</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Cashier_Page_label_total">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>484</y>
+        <width>97</width>
+        <height>67</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:36px;
+font-weight:500;</string>
+      </property>
+      <property name="text">
+       <string>Total</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Cashier_Page_btn_credit_card">
+      <property name="geometry">
+       <rect>
+        <x>872</x>
+        <y>570</y>
+        <width>210</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+font:25px;
+font-weight:500;
+
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 30px;
+border:none;
+font:25px;
+font-weight:500;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Credit Card</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>42</width>
+        <height>150</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Cash_Payment_Page">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <widget class="QFrame" name="frame_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>240</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(197, 197, 197, 255), stop:1 rgba(136, 136, 136, 255));
+
+	background-color: rgb(232, 151, 0);
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+border-radius:0px;
+}
+
+QPushButton
+{
+background-color: rgb(240, 186, 88,0);
+font-size: 20px;
+height: 73px;
+width: 1px;
+border: none;
+color: white; 
+	color: rgb(41, 14, 4);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QLabel" name="Cash_Payment_Page_label_name_">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="text">
+          <string>Cash</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="Cash_Payment_Page_label_total_price">
+      <property name="geometry">
+       <rect>
+        <x>896</x>
+        <y>484</y>
+        <width>163</width>
+        <height>67</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:36px;
+font-weight:500;</string>
+      </property>
+      <property name="text">
+       <string>$0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="Cash_Payment_Page_scroll_area">
+      <property name="geometry">
+       <rect>
+        <x>342</x>
+        <y>92</y>
+        <width>757</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="Cash_Payment_Page_food_ordered_content">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>757</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_16">
+        <item>
+         <layout class="QVBoxLayout" name="Cash_Payment_Page_verticalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetMinimumSize</enum>
+          </property>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="Cash_Payment_Page_btn_back">
+      <property name="geometry">
+       <rect>
+        <x>264</x>
+        <y>-18</y>
+        <width>205</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 20px;
+border:none;
+font:25px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="image.qrc">
+        <normaloff>:/image/back.png</normaloff>:/image/back.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>42</width>
+        <height>150</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Cash_Payment_Page_label_title">
+      <property name="geometry">
+       <rect>
+        <x>572</x>
+        <y>18</y>
+        <width>295</width>
+        <height>53</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Table 13 (3 People)</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Cash_Payment_Page_label_total">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>484</y>
+        <width>97</width>
+        <height>67</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:36px;
+font-weight:500;</string>
+      </property>
+      <property name="text">
+       <string>Total</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Cash_Payment_Page_btn_confirm">
+      <property name="geometry">
+       <rect>
+        <x>974</x>
+        <y>-18</y>
+        <width>205</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Confirm</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>42</width>
+        <height>150</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Cash_Payment_Page_label_paid">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>556</y>
+        <width>97</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Paid</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Cash_Payment_Page_label_change">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>600</y>
+        <width>97</width>
+        <height>67</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Change</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Cash_Payment_Page_label_change_price">
+      <property name="geometry">
+       <rect>
+        <x>922</x>
+        <y>600</y>
+        <width>113</width>
+        <height>67</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="text">
+       <string>$00.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Cash_Payment_Page_input_paid">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>556</y>
+        <width>277</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 25px;
+background-color: white;</string>
+      </property>
+      <property name="text">
+       <string>0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Credit_Card_Payment_Page">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <widget class="QFrame" name="frame_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>240</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(197, 197, 197, 255), stop:1 rgba(136, 136, 136, 255));
+
+	background-color: rgb(232, 151, 0);
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+border-radius:0px;
+}
+
+QPushButton
+{
+background-color: rgb(240, 186, 88,0);
+font-size: 20px;
+height: 73px;
+width: 1px;
+border: none;
+color: white; 
+	color: rgb(41, 14, 4);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QLabel" name="Credit_Card_Paymen_Page_label_name">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="text">
+          <string>Credit Card</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="Credit_Card_Payment_Page_btn_back">
+      <property name="geometry">
+       <rect>
+        <x>264</x>
+        <y>-18</y>
+        <width>205</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 20px;
+border:none;
+font:25px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="image.qrc">
+        <normaloff>:/image/back.png</normaloff>:/image/back.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>42</width>
+        <height>150</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Credit_Card_Payment_Page_btn_confirm">
+      <property name="geometry">
+       <rect>
+        <x>974</x>
+        <y>-18</y>
+        <width>205</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius: 20px;
+border:none;
+font:25px;
+font-weight:500;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Confirm</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>42</width>
+        <height>150</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="Credit_Card_Payment_Page_scroll_area">
+      <property name="geometry">
+       <rect>
+        <x>342</x>
+        <y>92</y>
+        <width>757</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="Credit_Card_Payment_Page_food_ordered_context">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>757</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QVBoxLayout" name="Credit_Card_Payment_Page_verticalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetMinimumSize</enum>
+          </property>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="Credit_Card_Payment_Page_label_total">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>550</y>
+        <width>97</width>
+        <height>67</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:36px;
+font-weight:500;</string>
+      </property>
+      <property name="text">
+       <string>Total</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Credit_Card_Payment_Page_label_title">
+      <property name="geometry">
+       <rect>
+        <x>572</x>
+        <y>18</y>
+        <width>295</width>
+        <height>53</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Table 13 (3 People)</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Credit_Card_Payment_Page_label_total_price">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>550</y>
+        <width>175</width>
+        <height>67</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font:36px;
+font-weight:500;</string>
+      </property>
+      <property name="text">
+       <string>$0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Statistics_Page">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <widget class="QFrame" name="frame_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>240</width>
+        <height>675</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame
+{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(197, 197, 197, 255), stop:1 rgba(136, 136, 136, 255));
+
+	background-color: rgb(232, 151, 0);
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+border-radius:0px;
+}
+
+QPushButton
+{
+background-color: rgb(240, 186, 88,0);
+font-size: 20px;
+height: 73px;
+width: 1px;
+border: none;
+color: white; 
+	color: rgb(41, 14, 4);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item>
+        <widget class="QLabel" name="Statistics_Page_label_name">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+         </property>
+         <property name="text">
+          <string>Statistics</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>374</x>
+        <y>-2</y>
+        <width>701</width>
+        <height>79</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="Statistics_Page_btn_7_days">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+
+QPushButton
+{
+
+
+background-color: rgb(249, 234, 154);
+	color: rgb(41, 14, 4);
+border-radius:0;
+border:none;
+font:24px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(249, 246, 194);
+	color: rgb(41, 14, 4);
+border-radius:0;
+border:none;
+font:24px;
+font-weight:500;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>7 Days</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Statistics_Page_btn_30_days">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+
+QPushButton
+{
+background-color: rgb(232, 151, 0);
+color: rgb(41, 14, 4);
+border-radius:0;
+border:none;
+font:24px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius:0;
+font:24px;
+font-weight:500;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>30 Days</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Statistics_Page_btn_365_days">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius:0;
+border:none;
+font:24px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+	color: rgb(41, 14, 4);
+border-radius:0;
+font:24px;
+font-weight:500;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>365 Days</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QFrame" name="Statistics_Page_frame_1">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>112</y>
+        <width>400</width>
+        <height>250</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: ;
+background-color: rgb(244, 244, 244,0);
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="Statistics_Page_label_title_1">
+       <property name="geometry">
+        <rect>
+         <x>16</x>
+         <y>10</y>
+         <width>365</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>Average Turn Over Ratio</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_content_1">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>52</y>
+         <width>391</width>
+         <height>195</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+font:36px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="Statistics_Page_frame_2">
+      <property name="geometry">
+       <rect>
+        <x>754</x>
+        <y>112</y>
+        <width>400</width>
+        <height>250</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: ;
+background-color: rgb(244, 244, 244,0);
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish">
+       <property name="geometry">
+        <rect>
+         <x>16</x>
+         <y>10</y>
+         <width>365</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>Best Dish</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_no_1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>56</y>
+         <width>79</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>No.1 :</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_no_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>124</y>
+         <width>79</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>No.3 :</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_no_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>79</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::DefaultContextMenu</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>No.2 :</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_no_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>158</y>
+         <width>79</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>No.4 :</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_no_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>192</y>
+         <width>79</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>No.5 :</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_1">
+       <property name="geometry">
+        <rect>
+         <x>84</x>
+         <y>56</y>
+         <width>309</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+font:14px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>Steamed Minced Pork w/ Preserved Vegetables</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_2">
+       <property name="geometry">
+        <rect>
+         <x>84</x>
+         <y>90</y>
+         <width>309</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+font:14px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>Rice</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_3">
+       <property name="geometry">
+        <rect>
+         <x>84</x>
+         <y>124</y>
+         <width>309</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+font:14px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>Rice</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_4">
+       <property name="geometry">
+        <rect>
+         <x>84</x>
+         <y>158</y>
+         <width>309</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+font:14px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>Rice</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Statistics_Page_label_best_dish_5">
+       <property name="geometry">
+        <rect>
+         <x>84</x>
+         <y>192</y>
+         <width>309</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+font:14px;
+font-weight:500;</string>
+       </property>
+       <property name="text">
+        <string>Rice</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="Statistics_Page_frame_3">
+      <property name="geometry">
+       <rect>
+        <x>316</x>
+        <y>396</y>
+        <width>400</width>
+        <height>250</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: ;
+background-color: rgb(244, 244, 244,0);
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="Statistics_Page_label_title_3">
+       <property name="geometry">
+        <rect>
+         <x>16</x>
+         <y>10</y>
+         <width>365</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>Peak Hour</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QGraphicsView" name="Statistics_Page_graphicsView_title_3">
+       <property name="geometry">
+        <rect>
+         <x>26</x>
+         <y>44</y>
+         <width>349</width>
+         <height>185</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="Statistics_Page_frame_4">
+      <property name="geometry">
+       <rect>
+        <x>754</x>
+        <y>394</y>
+        <width>400</width>
+        <height>250</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 3px solid rgb(41, 14, 4);
+
+border-radius: 30px;
+background-color: ;
+background-color: rgb(244, 244, 244,0);
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="Statistics_Page_label_title_4">
+       <property name="geometry">
+        <rect>
+         <x>16</x>
+         <y>10</y>
+         <width>365</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string>Sales Distribution </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QGraphicsView" name="Statistics_Page_graphicsView_title_4">
+       <property name="geometry">
+        <rect>
+         <x>22</x>
+         <y>48</y>
+         <width>349</width>
+         <height>185</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Number_Of_People_Input_Page">
+     <property name="styleSheet">
+      <string notr="true">*{
+	font: 24pt &quot;Segoe UI&quot;;
+
+}
+
+#Number_Of_People_Input_Page
+{
+	
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(232, 184, 95, 255), stop:1 rgba(232, 151, 0, 255));
+
+}
+
+QFrame
+{
+
+	border-radius:45px;
+	background-color: rgb(255, 255, 255);
+
+}
+
+QLineEdit
+{
+	color: rgb(112, 112, 112);
+	border:none;
+	border-bottom:1px solid  rgb(112, 112, 112);
+	background:transparent;
+
+}
+
+
+QPushButton
+{
+	border-radius:35px;
+	background-color: rgb(104, 78, 50);
+	color: rgb(112, 112, 112); 
+	color:#ffffff; 
+	font: 18pt;
+	font-weight:500;
+}
+
+QPushButton:hover
+{
+	border-radius:35px;
+	background-color: rgb(234, 192, 144);
+	color: rgb(112, 112, 112); 
+	color:#ffffff; 
+}
+</string>
+     </property>
+     <widget class="QFrame" name="Number_Of_People_Input_Page_frame">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>62</y>
+        <width>400</width>
+        <height>535</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>611</width>
+        <height>571</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="Number_Of_People_Input_Page_text_number_of_people">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>324</y>
+         <width>300</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="text">
+        <string>Number of People</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Number_Of_People_Input_Page_btn_comfirm">
+       <property name="geometry">
+        <rect>
+         <x>144</x>
+         <y>418</y>
+         <width>113</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>-1</pointsize>
+         <weight>62</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+
+
+	background-color: rgb(232, 151, 0);
+	color: rgb(41, 14, 4);
+border-radius: 35px;
+border:none;
+font:40px;
+font-weight:500;
+}
+QPushButton:hover
+{
+	background-color: rgb(240, 186, 88);
+color: white;
+border-radius: 35px;
+border:none;
+font:40px;
+font-weight:500;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/forward.png</normaloff>:/image/forward.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>36</width>
+         <height>36</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Number_Of_People_Input_Page_label_invaild_input">
+       <property name="geometry">
+        <rect>
+         <x>78</x>
+         <y>196</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font:16px;
+color: rgb(255, 255,255,0);
+background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string>Invalid Input</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Number_Of_People_Input_Page_label_icon">
+       <property name="geometry">
+        <rect>
+         <x>64</x>
+         <y>-28</y>
+         <width>273</width>
+         <height>267</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/image/icon_1.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Number_Of_People_Input_Page_label_table_number">
+       <property name="geometry">
+        <rect>
+         <x>108</x>
+         <y>214</y>
+         <width>187</width>
+         <height>77</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Table 1</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <zorder>Number_Of_People_Input_Page_label_icon</zorder>
+      <zorder>Number_Of_People_Input_Page_text_number_of_people</zorder>
+      <zorder>Number_Of_People_Input_Page_btn_comfirm</zorder>
+      <zorder>Number_Of_People_Input_Page_label_table_number</zorder>
+      <zorder>Number_Of_People_Input_Page_label_invaild_input</zorder>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>

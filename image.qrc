@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/image">
+    <file alias="forward.png">forward.png</file>
+    <file alias="back.png">back.png</file>
+    <file alias="rice.jpg">rice.jpg</file>
+    <file alias="decrease.png">decrease.png</file>
+    <file alias="increase.png">increase.png</file>
+     <file alias="icon_1.png">icon_1.png</file>
+     <file alias="icon_2.png">icon_2.png</file>
+
+
+  </qresource>
+</RCC>
