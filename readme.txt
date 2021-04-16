@@ -2,9 +2,9 @@ Welcome to #Restaurant.
 The path of executable file is .\hackust\output\Sharp_Restaurant\Sharp_Restaurant.exe Double click it to execution.
 
 The path of source code is .\hackust\Sharp_Restaurant.py. 
-.\hackust\main.ui and .\hackust\UiMain.py is graphic user inerface designed by our team powered by PyQt5.
+.\hackust\main.ui and .\hackust\UiMain.py is graphic user Interface designed by our team powered by PyQt5.
 
-Because the #Restaurant is using MySQL server as online database, please make sure you have stable internet connection while using #Restaurant.
+Because the #Restaurant is using MySQL server as the online database, please make sure you have stable internet connection while using #Restaurant.
 
 The path of database desing if .hackust\Database Design.pdf
 
