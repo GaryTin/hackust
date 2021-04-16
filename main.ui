@@ -105,7 +105,7 @@ color: rgb(41, 14, 4);
 </string>
     </property>
     <property name="currentIndex">
-     <number>8</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Login_Page">
      <property name="styleSheet">
@@ -490,7 +490,7 @@ border:none;
 </string>
          </property>
          <property name="text">
-          <string>Table 1</string>
+          <string>Table 6</string>
          </property>
         </widget>
        </item>
@@ -568,7 +568,7 @@ border:none;
 </string>
          </property>
          <property name="text">
-          <string>Table 1</string>
+          <string>Table 5</string>
          </property>
         </widget>
        </item>
@@ -646,7 +646,7 @@ border:none;
 </string>
          </property>
          <property name="text">
-          <string>Table 1</string>
+          <string>Table 4</string>
          </property>
         </widget>
        </item>
@@ -685,7 +685,7 @@ border:none;
 </string>
          </property>
          <property name="text">
-          <string>Table 1</string>
+          <string>Table 3</string>
          </property>
         </widget>
        </item>
