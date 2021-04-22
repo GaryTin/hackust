@@ -321,6 +321,7 @@ class MainWindow(QMainWindow):
     # ==================================================================================
     def back_to_waiter_page(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Page)
+
     def Waiter_Order_Page_order_cash(self):
         self.ui.Cashier_Page_label_title.setText("Takeaway")
         self.waiter_payment = True
@@ -598,7 +599,6 @@ class MainWindow(QMainWindow):
     def SetUpWaiterOrderPage(self):
         global role, hackust_db
         self.total = float(0)
-        self.waiter_payment = True
         Current_time = datetime.datetime.now().strftime("%H:%M:%S")
         Current_Date = str(datetime.date.today())
         table_name = str(self.ui.Login_Page_text_username.text())
@@ -1534,6 +1534,7 @@ class MainWindow(QMainWindow):
         self.ui.Statistics_Page_label_content_1.setText(str(statistics[0][0]))
 
     def Waiter(self):
+        self.waiter_payment = False
         if (self.ui.stackedWidget.currentWidget() == self.ui.Waiter_Page):
             timer = QTimer()
             timer.timeout.connect(self.Waiter)
@@ -1981,15 +1982,23 @@ font-weight:500;
         self.CashierReset()
 
     def CashBack(self):
-        self.ui.stackedWidget.setCurrentWidget(self.ui.Cashier_Page)
+        if(self.waiter_payment== True):
+            self.waiter_payment = False
+            self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Order_Page)
+        else:
+            self.ui.stackedWidget.setCurrentWidget(self.ui.Cashier_Page)
         self.CashReset()
 
     def CreditBack(self):
-        self.ui.stackedWidget.setCurrentWidget(self.ui.Cashier_Page)
+        if (self.waiter_payment == True):
+            self.waiter_payment = False
+            self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Order_Page)
+        else:
+            self.ui.stackedWidget.setCurrentWidget(self.ui.Cashier_Page)
         self.CreditCardReset()
 
     def Cashiers(self):
-        sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 ORDER BY checking_time;
+        sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1  AND checking_time IS NOT NULL ORDER BY checking_time;
                                                """
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
@@ -2063,7 +2072,7 @@ font-weight:500;
         self.q = 100
 
         self.ui.stackedWidget.setCurrentWidget(self.ui.Cash_Payment_Page)
-        sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 ORDER BY checking_time;
+        sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 AND checking_time IS NOT NULL ORDER BY checking_time;
                                                           """
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
@@ -2079,6 +2088,7 @@ font-weight:500;
                     c = tablecashier[x][1]
                     break
                 x = x + 1
+
         self.ui.Cash_Payment_Page_label_title.setText(self.ui.Cashier_Page_label_title.text())
         sql_select_Query = """SELECT a.item_ename, b.order_qty, c.menu_price, b.order_status
                    FROM item_name AS a 
@@ -2135,10 +2145,9 @@ font-weight:500;
 
     def CreditCard(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Credit_Card_Payment_Page)
-        self.ui.stackedWidget.setCurrentWidget(self.ui.Credit_Card_Payment_Page)
 
         self.ui.Credit_Card_Payment_Page_label_title.setText(self.ui.Cashier_Page_label_title.text())
-        sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 ORDER BY checking_time;
+        sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 AND checking_time IS NOT NULL ORDER BY checking_time;
                                                                            """
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
