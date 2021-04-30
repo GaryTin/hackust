@@ -21,9 +21,9 @@ hackust_db = mysql.connector.connect(
 )
 
 role = "None"
-cashier=[]
-cash=[]
-creditcard=[]
+cashier = []
+cash = []
+creditcard = []
 
 
 class MainWindow(QMainWindow):
@@ -75,16 +75,16 @@ class MainWindow(QMainWindow):
     def updataQ(self):
         try:
             self.q = float(self.ui.Cash_Payment_Page_input_paid.text())
-            self.ui.Cash_Payment_Page_label_change_price.setText("$" + str(round(float(self.q) - float(self.z),2)))
+            self.ui.Cash_Payment_Page_label_change_price.setText("$" + str(round(float(self.q) - float(self.z), 2)))
         except:
             pass
 
     def SetUpKitchen_Bar(self):
-        self.Bar_or_Kitchen=""
+        self.Bar_or_Kitchen = ""
         self.dish_on_screen = 0
-        self.on_screen_order_id = [[],[],[],[]]
+        self.on_screen_order_id = [[], [], [], []]
         self.maxDish = 3
-        if(self.ui.Kitchen_Bar_Page_label_name.text()=="Bar"):
+        if (self.ui.Kitchen_Bar_Page_label_name.text() == "Bar"):
             self.Bar_or_Kitchen = "2"
         else:
             self.Bar_or_Kitchen = "1"
@@ -92,16 +92,16 @@ class MainWindow(QMainWindow):
         self.Kitchen_Bar_Page_label_array = [
             [self.ui.Kitchen_Bar_Page_btn_dish_1, self.ui.Kitchen_Bar_Page_image_dish_1,
              self.ui.Kitchen_Bar_Page_food_name_dish_1, self.ui.Kitchen_Bar_Page_food_quantity_dish_1,
-             self.ui.Kitchen_Bar_Page_timer_dish_1,self.ui.Kitchen_Bar_Page_dish_1],
+             self.ui.Kitchen_Bar_Page_timer_dish_1, self.ui.Kitchen_Bar_Page_dish_1],
             [self.ui.Kitchen_Bar_Page_btn_dish_2, self.ui.Kitchen_Bar_Page_image_dish_2,
              self.ui.Kitchen_Bar_Page_food_name_dish_2, self.ui.Kitchen_Bar_Page_food_quantity_dish_2,
-             self.ui.Kitchen_Bar_Page_timer_dish_2,self.ui.Kitchen_Bar_Page_dish_2],
+             self.ui.Kitchen_Bar_Page_timer_dish_2, self.ui.Kitchen_Bar_Page_dish_2],
             [self.ui.Kitchen_Bar_Page_btn_dish_3, self.ui.Kitchen_Bar_Page_image_dish_3,
              self.ui.Kitchen_Bar_Page_food_name_dish_3, self.ui.Kitchen_Bar_Page_food_quantity_dish_3,
-             self.ui.Kitchen_Bar_Page_timer_dish_3,self.ui.Kitchen_Bar_Page_dish_3],
+             self.ui.Kitchen_Bar_Page_timer_dish_3, self.ui.Kitchen_Bar_Page_dish_3],
             [self.ui.Kitchen_Bar_Page_btn_dish_4, self.ui.Kitchen_Bar_Page_image_dish_4,
              self.ui.Kitchen_Bar_Page_food_name_dish_4, self.ui.Kitchen_Bar_Page_food_quantity_dish_4,
-             self.ui.Kitchen_Bar_Page_timer_dish_4,self.ui.Kitchen_Bar_Page_dish_4]
+             self.ui.Kitchen_Bar_Page_timer_dish_4, self.ui.Kitchen_Bar_Page_dish_4]
         ]
         self.GetUpdatePendingDish()
         self.mainTimer = QTimer(self)
@@ -115,10 +115,10 @@ class MainWindow(QMainWindow):
         self.timer3.timeout.connect(self.TimerUpdate_3)
         self.timer4 = QTimer(self)
         self.timer4.timeout.connect(self.TimerUpdate_4)
-        self.timerArray=[self.timer1,self.timer2,self.timer3,self.timer4]
+        self.timerArray = [self.timer1, self.timer2, self.timer3, self.timer4]
         for i in range(4):
             self.Kitchen_Bar_Page_label_array[i][0].clicked.connect(self.KitchenBtnOnClick)
-            if self.length>0:
+            if self.length > 0:
                 self.Kitchen_Bar_Page_label_array[i][5].show()
 
                 self.Kitchen_Bar_Page_label_array[i][4].setText("00 min 00 sec")
@@ -127,42 +127,42 @@ class MainWindow(QMainWindow):
                 tempqu = self.Kitchen_Bar_Page_pending_dish_records[0][1]
                 tempname = self.Kitchen_Bar_Page_pending_dish_records[0][0]
                 index = 0
-                self.order_id=self.Kitchen_Bar_Page_pending_dish_records[0][2]
+                self.order_id = self.Kitchen_Bar_Page_pending_dish_records[0][2]
                 self.on_screen_order_id[i].append(self.order_id)
                 self.item_id = self.Kitchen_Bar_Page_pending_dish_records[0][3]
                 self.PendingToCooking()
                 self.GetUpdatePendingDish()
                 for check_row in self.Kitchen_Bar_Page_pending_dish_records:
                     if (str(check_row[0]) == str(tempname) and int(check_row[1]) + int(tempqu) <= 3):
-                        tempqu = int(tempqu) +int(check_row[1])
+                        tempqu = int(tempqu) + int(check_row[1])
                         self.on_screen_order_id[i].append(check_row[2])
                         self.order_id = check_row[2]
-                        self.merged_dish = self.merged_dish+1
+                        self.merged_dish = self.merged_dish + 1
                         self.PendingToCooking()
 
-                    if tempqu>=3:
+                    if tempqu >= 3:
                         break
-                    index = index +1
+                    index = index + 1
                 self.GetUpdatePendingDish()
                 self.Kitchen_Bar_Page_label_array[i][2].setText(str(tempname))
-                text = "x"+str(tempqu)
+                text = "x" + str(tempqu)
                 self.Kitchen_Bar_Page_label_array[i][3].setText(str(text))
-                iname = str(self.item_id)+".jpg"
+                iname = str(self.item_id) + ".jpg"
                 Ipic = QPixmap(iname)
                 self.Kitchen_Bar_Page_label_array[i][1].setPixmap(Ipic)
-                self.dish_on_screen =self.dish_on_screen+1
+                self.dish_on_screen = self.dish_on_screen + 1
             else:
                 self.Kitchen_Bar_Page_label_array[i][5].hide()
                 self.timerArray[i].stop()
-        text = str(self.length)+" Order Left"
+        text = str(self.length) + " Order Left"
         self.ui.Kitchen_Bar_Page_label_dish_left.setText(text)
 
     def MainKitchenTimer(self):
-        if self.dish_on_screen <4:
+        if self.dish_on_screen < 4:
             self.GetUpdatePendingDish()
-            if(len(self.Kitchen_Bar_Page_pending_dish_records)!=0):
+            if (len(self.Kitchen_Bar_Page_pending_dish_records) != 0):
                 for i in range(4):
-                    if(self.Kitchen_Bar_Page_label_array[i][5].isVisible()==False):
+                    if (self.Kitchen_Bar_Page_label_array[i][5].isVisible() == False):
                         self.Kitchen_Bar_Page_label_array[i][5].show()
 
                         self.Kitchen_Bar_Page_label_array[i][4].setText("00 min 00 sec")
@@ -199,60 +199,64 @@ class MainWindow(QMainWindow):
     def TimerUpdate_1(self):
         min = int(self.Kitchen_Bar_Page_label_array[0][4].text()[0:2])
         sec = int(self.Kitchen_Bar_Page_label_array[0][4].text()[7:9])
-        sec = int(sec)+1
+        sec = int(sec) + 1
         if int(sec) < 10:
-            sec = str(0)+str(sec)
+            sec = str(0) + str(sec)
         elif int(sec) == 60:
-            min = int(min)+1
-        if int(min) <10:
-            min = str(0)+str(min)
-        text  =str(min)+" min "+str(sec)+" sec"
+            min = int(min) + 1
+        if int(min) < 10:
+            min = str(0) + str(min)
+        text = str(min) + " min " + str(sec) + " sec"
         self.Kitchen_Bar_Page_label_array[0][4].setText(str(text))
+
     def TimerUpdate_2(self):
         min = int(self.Kitchen_Bar_Page_label_array[1][4].text()[0:2])
         sec = int(self.Kitchen_Bar_Page_label_array[1][4].text()[7:9])
-        sec = int(sec)+1
+        sec = int(sec) + 1
         if int(sec) < 10:
-            sec = str(0)+str(sec)
+            sec = str(0) + str(sec)
         elif int(sec) == 60:
-            min = int(min)+1
-        if int(min) <10:
-            min = str(0)+str(min)
-        text  =str(min)+" min "+str(sec)+" sec"
+            min = int(min) + 1
+        if int(min) < 10:
+            min = str(0) + str(min)
+        text = str(min) + " min " + str(sec) + " sec"
         self.Kitchen_Bar_Page_label_array[1][4].setText(str(text))
+
     def TimerUpdate_3(self):
         min = int(self.Kitchen_Bar_Page_label_array[2][4].text()[0:2])
         sec = int(self.Kitchen_Bar_Page_label_array[2][4].text()[7:9])
-        sec = int(sec)+1
+        sec = int(sec) + 1
         if int(sec) < 10:
-            sec = str(0)+str(sec)
+            sec = str(0) + str(sec)
         elif int(sec) == 60:
-            min = int(min)+1
-        if int(min) <10:
-            min = str(0)+str(min)
-        text  =str(min)+" min "+str(sec)+" sec"
+            min = int(min) + 1
+        if int(min) < 10:
+            min = str(0) + str(min)
+        text = str(min) + " min " + str(sec) + " sec"
         self.Kitchen_Bar_Page_label_array[2][4].setText(str(text))
+
     def TimerUpdate_4(self):
         min = int(self.Kitchen_Bar_Page_label_array[3][4].text()[0:2])
         sec = int(self.Kitchen_Bar_Page_label_array[3][4].text()[7:9])
-        sec = int(sec)+1
+        sec = int(sec) + 1
         if int(sec) < 10:
-            sec = str(0)+str(sec)
+            sec = str(0) + str(sec)
         elif int(sec) == 60:
-            min = int(min)+1
-        if int(min) <10:
-            min = str(0)+str(min)
-        text  =str(min)+" min "+str(sec)+" sec"
+            min = int(min) + 1
+        if int(min) < 10:
+            min = str(0) + str(min)
+        text = str(min) + " min " + str(sec) + " sec"
         self.Kitchen_Bar_Page_label_array[3][4].setText(str(text))
+
     def KitchenBtnOnClick(self):
         sender_index = -1
         for i in range(4):
-            if (self.sender()==self.Kitchen_Bar_Page_label_array[i][0]):
+            if (self.sender() == self.Kitchen_Bar_Page_label_array[i][0]):
                 sender_index = i
                 break
         self.CookingToReady(sender_index)
         self.dish_on_screen = self.dish_on_screen - 1
-        if self.length >0:
+        if self.length > 0:
             self.Kitchen_Bar_Page_label_array[sender_index][5].show()
             self.merged_dish = 0
             self.Kitchen_Bar_Page_label_array[i][4].setText("00 min 00 sec")
@@ -290,18 +294,17 @@ class MainWindow(QMainWindow):
         text = str(self.length) + " Order Left"
         self.ui.Kitchen_Bar_Page_label_dish_left.setText(text)
 
-
-
-
-    def CookingToReady(self,block):
+    def CookingToReady(self, block):
         for i in self.on_screen_order_id[block]:
-            sql_select_Query = """UPDATE customer_order SET order_status = '2', ready_time = CURRENT_TIME  WHERE (order_id =  '"""+str(i)+"""');"""
+            sql_select_Query = """UPDATE customer_order SET order_status = '2', ready_time = CURRENT_TIME  WHERE (order_id =  '""" + str(
+                i) + """');"""
             cursor = hackust_db.cursor()
             cursor.execute(sql_select_Query)
             hackust_db.commit()
 
     def PendingToCooking(self):
-        sql_select_Query = """UPDATE customer_order SET order_status = '1' WHERE (order_id = '"""+str(self.order_id)+"""');"""
+        sql_select_Query = """UPDATE customer_order SET order_status = '1' WHERE (order_id = '""" + str(
+            self.order_id) + """');"""
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
         hackust_db.commit()
@@ -316,7 +319,6 @@ class MainWindow(QMainWindow):
         cursor.execute(sql_select_Query)
         self.Kitchen_Bar_Page_pending_dish_records = cursor.fetchall()
         self.length = len(self.Kitchen_Bar_Page_pending_dish_records)
-
 
     # ==================================================================================
     def back_to_waiter_page(self):
@@ -370,7 +372,8 @@ class MainWindow(QMainWindow):
                 qu) + """ WHERE (menu_id = '""" + str(item_id) + """');"""
             cursor = hackust_db.cursor()
             cursor.execute(sql_select_Query)
-            sql_select_Query = """UPDATE receipt SET checking_time = CURRENT_TIME, checking_status = '1' WHERE (receipt_id = '"""+str(self.receipt_id)+"""');"""
+            sql_select_Query = """UPDATE receipt SET checking_time = CURRENT_TIME, checking_status = '1' WHERE (receipt_id = '""" + str(
+                self.receipt_id) + """');"""
             cursor = hackust_db.cursor()
             cursor.execute(sql_select_Query)
 
@@ -421,13 +424,14 @@ class MainWindow(QMainWindow):
         self.total = float(0)
         for row in self.Waiter_Order_Page_ordered_food_array:
             self.total = self.total + float(row[2])
-        if self.language =="e":
+        if self.language == "e":
             text = "Food Ordered          $" + str(self.total)
         else:
             text = "食品訂單          $" + str(self.total)
         self.ui.Waiter_Order_Page_btn_food_ordered.setText(text)
         text = "$" + str(self.total)
         self.ui.Waiter_Food_Ordered_Widget_label_total_price.setText(text)
+
     def Waiter_Order_Page_add_q(self):
         for i in range(3):
             if (self.sender() == self.Waiter_Order_Page_food_quantity_array[i][1]):
@@ -509,6 +513,7 @@ class MainWindow(QMainWindow):
         self.ui.Waiter_Order_Page_btn_food_ordered.setText(text)
         text = "$" + str(self.total)
         self.ui.Waiter_Food_Ordered_Widget_label_total_price.setText(text)
+
     def Waiter_Order_Page_pop_up(self):
         self.ui.Waiter_Food_Ordered_Widget.raise_()
 
@@ -706,7 +711,6 @@ class MainWindow(QMainWindow):
             self.ui.Waiter_Order_Page_btn_chi.clicked.connect(self.Waiter_ChangeToChi)
             self.ui.Waiter_Order_Page_btn_eng.clicked.connect(self.Waiter_ChangeToEng)
 
-
     def TabOnClick_Waiter(self):
         Waiter_Order_Page_selected_stylesheet = """background-color: rgb(249, 234, 154);"""
         for i in range(len(self.Waiter_Order_Page_records)):
@@ -756,7 +760,8 @@ class MainWindow(QMainWindow):
                 text = "$" + str(self.Waiter_Order_Page_menu_item_records[self.Waiter_Order_Page_dish_page * 3 + i][1])
                 self.Waiter_Order_Page_food_price_array[i].setText(str(text))
                 self.Waiter_Order_Page_food_quantity_array[i][0].setText(str(0))
-                Iname = str(self.Waiter_Order_Page_menu_item_records[self.Waiter_Order_Page_dish_page * 3 + i][2])+".jpg"
+                Iname = str(
+                    self.Waiter_Order_Page_menu_item_records[self.Waiter_Order_Page_dish_page * 3 + i][2]) + ".jpg"
                 pic = QPixmap(Iname)
                 self.Waiter_Order_Page_food_image_array[i].setPixmap(pic)
                 for j in range(self.Waiter_Order_Page_Number_submited_food_ordered,
@@ -905,6 +910,7 @@ class MainWindow(QMainWindow):
         self.ui.Table_Order_Page_btn_food_ordered.setText(text)
         text = "$" + str(self.total)
         self.ui.Food_Ordered_Widget_label_total_price.setText(text)
+
     def Table_Order_Page_add_q(self):
         for i in range(3):
             if (self.sender() == self.Table_Order_Page_food_quantity_array[i][1]):
@@ -966,7 +972,7 @@ class MainWindow(QMainWindow):
                         if (self.Table_Order_Page_ordered_food_array[j][0] == self.Table_Order_Page_food_name_array[
                             i].text()):
                             self.Table_Order_Page_ordered_food_array[j][1] = \
-                            self.Table_Order_Page_food_quantity_array[i][0].text()
+                                self.Table_Order_Page_food_quantity_array[i][0].text()
                             self.Table_Order_Page_ordered_food_array[j][2] = str(
                                 float(self.Table_Order_Page_food_price_array[i].text()[1:]) * float(
                                     self.Table_Order_Page_food_quantity_array[i][0].text()))
@@ -983,8 +989,9 @@ class MainWindow(QMainWindow):
         else:
             text = "食品訂單          $" + str(self.total)
         self.ui.Table_Order_Page_btn_food_ordered.setText(text)
-        text = "$"+str(self.total)
+        text = "$" + str(self.total)
         self.ui.Food_Ordered_Widget_label_total_price.setText(text)
+
     def Table_Order_Page_pop_up(self):
         self.ui.Food_Ordered_Widget.raise_()
 
@@ -1131,8 +1138,8 @@ class MainWindow(QMainWindow):
                                                   self.ui.Table_Order_Page_label_food_price_dish_3]
 
         self.Table_Order_Page_food_image_array = [self.ui.Table_Order_Page_label_image_dish_1,
-                                                self.ui.Table_Order_Page_label_image_dish_2,
-                                                self.ui.Table_Order_Page_label_image_dish_3]
+                                                  self.ui.Table_Order_Page_label_image_dish_2,
+                                                  self.ui.Table_Order_Page_label_image_dish_3]
 
         self.Table_Order_Page_food_source_array = [[self.ui.Table_Order_Page_label_food_source_1_dish_1,
                                                     self.ui.Table_Order_Page_label_food_source_2_dish_1,
@@ -1174,8 +1181,6 @@ class MainWindow(QMainWindow):
                 self.Table_Order_Page_tab_btn_array[i].clicked.connect(self.TabOnClick)
             self.ui.Table_Order_Page_btn_chi.clicked.connect(self.Table_ChangeToChi)
             self.ui.Table_Order_Page_btn_eng.clicked.connect(self.Table_ChangeToEng)
-
-
 
     def TabOnClick(self):
 
@@ -1540,7 +1545,6 @@ class MainWindow(QMainWindow):
             timer.timeout.connect(self.Waiter)
             timer.start(10000)
 
-
         sql_select_Query = """SELECT user_id,receipt_id,no_of_ppl FROM receipt WHERE checking_status = 1 ORDER BY checking_time;
 
          """
@@ -1660,9 +1664,9 @@ class MainWindow(QMainWindow):
         x = 0
         name = self.ui.Cashier_Page_label_title.text()
 
-        if(self.waiter_payment==True):
-            self.waiter_payment=False
-            c= self.receipt_id
+        if (self.waiter_payment == True):
+            self.waiter_payment = False
+            c = self.receipt_id
         else:
             for row in tablecashier:
                 temp = str(tablecashier[x][0]) + " (" + str(tablecashier[x][2]) + " People)"
@@ -1671,7 +1675,8 @@ class MainWindow(QMainWindow):
                     break
                 x = x + 1
 
-            sql_select_Query = """UPDATE customer_order SET order_status = '4' WHERE (order_id = """ + str(c) + """); """
+            sql_select_Query = """UPDATE customer_order SET order_status = '4' WHERE (order_id = """ + str(
+                c) + """); """
             cursor = hackust_db.cursor()
             cursor.execute(sql_select_Query)
 
@@ -1681,7 +1686,7 @@ class MainWindow(QMainWindow):
         sql_select_Query = """UPDATE
                receipt
                SET
-               out_time = '"""+str(Current_time)+"""', checking_status = '0'
+               out_time = '""" + str(Current_time) + """', checking_status = '0'
                WHERE receipt_id='""" + str(c) + """'; """
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
@@ -1920,7 +1925,7 @@ font-weight:500;
         sql_select_Query = """UPDATE
         receipt
         SET
-        out_time = '"""+str(Current_time)+"""', checking_status = '0'
+        out_time = '""" + str(Current_time) + """', checking_status = '0'
         WHERE receipt_id='""" + str(c) + """'; """
         cursor = hackust_db.cursor()
         cursor.execute(sql_select_Query)
@@ -1930,7 +1935,6 @@ font-weight:500;
     def TakeAway(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Order_Page)
         self.SetUpWaiterOrderPage()
-
 
     def Chart(self):
         sql_select_Query = """
@@ -1982,7 +1986,7 @@ font-weight:500;
         self.CashierReset()
 
     def CashBack(self):
-        if(self.waiter_payment== True):
+        if (self.waiter_payment == True):
             self.waiter_payment = False
             self.ui.stackedWidget.setCurrentWidget(self.ui.Waiter_Order_Page)
         else:
@@ -2283,6 +2287,8 @@ font-weight:500;
         for row in cash:
             row.deleteLater()
         cash = []
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = MainWindow()
